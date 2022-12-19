@@ -11,7 +11,8 @@
         $id_rol = isset($_GET['id_rol']) ? $_GET['id_rol'] : NULL;
         $accion = $_GET['accion'];
     }
-    //require_once '../../../Componentes/header.php';
+    
+    require_once('../../../componentes/header.php');
     switch ($accion) {
         case 'alta':
             $datosAlta = $_POST;
@@ -66,5 +67,7 @@
             $datosUSROLs = $registro ->read();
             require_once('vistaAlta.php');
     }
+
+    require_once('../../../componentes/footer.php');
 
 ?>
