@@ -20,9 +20,9 @@
             <td><?php echo $datosPuesto['nombre'] ?></td>
 
                 <td>  
-                    <div>
-                    <i class="btn btn-success bi-pencil"><a href="ctrlPuesto.php?accion=modify&id_puesto=<?php echo $datosPuesto['id_puesto']; ?>">Modificar</a></i>
-                    <i class="btn btn-danger bi bi-trash"><a href="ctrlPuesto.php?accion=delete&id_puesto=<?php echo $datosPuesto['id_puesto']; ?>">Eliminar</a></i>
+                    <div>        
+                    <a href="ctrlPuesto.php?accion=modify&id_puesto=<?php echo $datosPuesto['id_puesto']; ?>"><button type="button" class="btn btn-success bi-pencil">Modificar</button></a>
+                    <a href="ctrlPuesto.php?accion=delete&id_puesto=<?php echo $datosPuesto['id_puesto']; ?>"><button type="button" class="btn btn-danger bi bi-trash">Eliminar</button></a>
                 </div>
                 </td>
 

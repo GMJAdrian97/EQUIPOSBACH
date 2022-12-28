@@ -21,8 +21,8 @@
 
                 <td>  
                     <div>
-                    <i class="btn btn-success bi-pencil"><a href="ctrlRenovacion.php?accion=modify&id_renovacion=<?php echo $datosRenovacion['id_renovacion']; ?>">Modificar</a></i>
-                    <i class="btn btn-danger bi bi-trash"><a href="ctrlRenovacion.php?accion=delete&id_renovacion=<?php echo $datosRenovacion['id_renovacion']; ?>">Eliminar</a></i>
+                    <a href="ctrlRenovacion.php?accion=modify&id_renovacion=<?php echo $datosRenovacion['id_renovacion']; ?>"><button type="button" class="btn btn-success bi-pencil">Modificar</button></a>
+                    <a href="ctrlRenovacion.php?accion=delete&id_renovacion=<?php echo $datosRenovacion['id_renovacion']; ?>"><button type="button" class="btn btn-danger bi bi-trash">Eliminar</button></a>
                 </div>
                 </td>
 

@@ -1,5 +1,5 @@
 <div id="containerFormularios">
-    <h1>&bull; Registro de Equipos &bull;</h1>
+    <h1>&bull; <?php echo(isset($st))? "Modifica a tu ": " Introduce tu nuevo ";?>Equipo &bull;</h1>
     <div class="underline">
     </div>
     <div class="icon_wrapper">
@@ -61,8 +61,8 @@
             </select>
         </div>
 
-        <div class="subject">
-            <label for="subject">Modelo</label>
+        <div class="MO">
+            <label for="MO">Modelo</label>
             <select placeholder="Subject line" id="subject_input" name="id_modelo" required>
                 <option selected>Choose...</option>
                 <?php $estado = $datosEquipo['estado'];

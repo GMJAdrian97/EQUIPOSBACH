@@ -21,8 +21,8 @@
 
                 <td>  
                     <div>
-                    <i class="btn btn-success bi-pencil"><a href="ctrlUn.php?accion=modify&id_un=<?php echo $datosUn['id_un']; ?>">Modificar</a></i>
-                    <i class="btn btn-danger bi bi-trash"><a href="ctrlUn.php?accion=delete&id_un=<?php echo $datosUn['id_un']; ?>">Eliminar</a></i>
+                    <a href="ctrlUn.php?accion=modify&id_un=<?php echo $datosUn['id_un']; ?>"><button type="button" class="btn btn-success bi-pencil">Modificar</button></a>
+                    <a href="ctrlUn.php?accion=delete&id_un=<?php echo $datosUn['id_un']; ?>"><button type="button" class="btn btn-danger bi bi-trash">Eliminar</button></a>
                 </div>
                 </td>
 

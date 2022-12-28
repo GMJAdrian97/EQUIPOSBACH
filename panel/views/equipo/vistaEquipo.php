@@ -38,8 +38,8 @@
 
                 <td>  
                     <div>
-                    <i class="btn btn-success bi-pencil"><a href="ctrlEquipo.php?accion=modify&st=<?php echo $datosEquipo['st']; ?>">Modificar</a></i>
-                    <i class="btn btn-danger bi bi-trash"><a href="ctrlEquipo.php?accion=delete&st=<?php echo $datosEquipo['st']; ?>">Eliminar</a></i>
+                    <a href="ctrlEquipo.php?accion=modify&st=<?php echo $datosEquipo['st']; ?>"><button type="button" class="btn btn-success bi-pencil">Modificar</button></a>
+                    <a href="ctrlEquipo.php?accion=delete&st=<?php echo $datosEquipo['st']; ?>"><button type="button" class="btn btn-danger bi bi-trash">Eliminar</button></a>
                 </div>
                 </td>
 
