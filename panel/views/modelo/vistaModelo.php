@@ -25,9 +25,10 @@
                             href="ctrlModelo.php?accion=modify&id_modelo=<?php echo $datosModelo['id_modelo']; ?>">Modificar</a></i>
                     <i class="btn btn-danger bi bi-trash"><a
                             href="ctrlModelo.php?accion=delete&id_modelo=<?php echo $datosModelo['id_modelo']; ?>">Eliminar</a></i>
-                    <a href="ctrlModelo.php?accion=delete&id_modelo=<?php echo $datosModelo['id_modelo']; ?>"> <button type="button" class="btn btn-danger bi bi-trash">
+                    <a href="ctrlModelo.php?accion=delete&id_modelo=<?php echo $datosModelo['id_modelo']; ?>"> <button
+                            type="button" class="btn btn-danger bi bi-trash">
                             Eliminarrr
-                    </button> </a>
+                        </button> </a>
                 </div>
             </td>
 
