@@ -93,6 +93,8 @@
     }
 
   input[type="text"],
+  [type="number"],
+  [type="mail"],
   [type="email"],
   select,
   textarea {
@@ -131,6 +133,61 @@
   }
 
   .ST {
+    float: left;
+    width: 45%;
+  }
+
+  .No_Empleado{
+    float: left;
+    width: 45%;
+  }
+
+  .Empleado{
+    float: right;
+    width: 45%;
+  }
+
+  .Correo{
+    float: left;
+    width: 45%;
+  }
+
+  .US_RED{
+    float: right;
+    width: 45%;
+  }
+
+  
+  .Celular{
+    float: left;
+    width: 45%;
+  }
+
+
+  .Puesto{
+    width: 100%;
+    float: right;
+    width: 45%;
+  }
+
+  .UN{
+    width: 100%;
+    float: left;
+    width: 45%;
+  }
+
+  .Departamento{
+    width: 100%;
+    float: right;;
+    width: 45%;
+  }
+
+  .estado{
+    float: left;
+    width: 45%;
+  }
+
+  .DescripLbl{
     float: left;
     width: 45%;
   }

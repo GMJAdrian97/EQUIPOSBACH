@@ -78,8 +78,8 @@
             </select>
         </div>
 
-        <div class="subject">
-            <label for="subject">Estado</label>
+        <div class="estado">
+            <label for="estado">Estado</label>
             <select placeholder="Subject line" id="subject_input" name="estado" required>
                 <option value="Disponible" selected>Disponible</option>
                 <option value="Ocupado">Ocupado</option>
@@ -94,9 +94,9 @@
                     <?php echo $estado?> </option>
             </select>
         </div>
-
+        <br/><br/><br/><br/><br/>
         <div class="descripcion">
-            <label for="descripcion">Descripcion</label>    
+            <label id="DescripLbl" for="descripcion">Descripcion</label>    
             <input type="text" name="descripcion"
                 value="<?php echo(isset($st)) ? $datosEquipo['descripcion']:"";?>" class="form-control" cols="30" rows="5"
                 id="textarea" placeholder="descripcion" />

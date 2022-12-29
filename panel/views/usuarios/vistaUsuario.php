@@ -34,8 +34,8 @@
 
                 <td>  
                     <div>
-                    <i class="btn btn-success bi-pencil"><a href="ctrlUsuario.php?accion=modify&no_empleado=<?php echo $datosUsuario['no_empleado']; ?>">Modificar</a></i>
-                    <i class="btn btn-danger bi bi-trash"><a href="ctrlUsuario.php?accion=delete&no_empleado=<?php echo $datosUsuario['no_empleado']; ?>">Eliminar</a></i>
+                    <a href="ctrlUsuario.php?accion=modify&no_empleado=<?php echo $datosUsuario['no_empleado']; ?>"><button type="button" class="btn btn-success bi-pencil">Modificar</button></a>
+                    <a href="ctrlUsuario.php?accion=delete&no_empleado=<?php echo $datosUsuario['no_empleado']; ?>"><button type="button" class="btn btn-danger bi bi-trash">Eliminar</button></a>
                 </div>
                 </td>
 
