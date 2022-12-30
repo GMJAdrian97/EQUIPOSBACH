@@ -38,8 +38,8 @@
 
                 <td>  
                     <div>
-                    <i class="btn btn-success bi-pencil"><a href="ctrlTicketPC.php?accion=modify&id_ticket=<?php echo $datosTicketPC['id_ticket']; ?>">Modificar</a></i>
-                    <i class="btn btn-danger bi bi-trash"><a href="ctrlTicketPC.php?accion=delete&id_ticket=<?php echo $datosTicketPC['id_ticket']; ?>&st=<?php echo $datosTicketPC['st']; ?>">Eliminar</a></i>
+                    <a href="ctrlTicketPC.php?accion=modify&id_ticket=<?php echo $datosTicketPC['id_ticket']; ?>"><button type="button" class="btn btn-success bi-pencil">Modificar</button></a>
+                    <a href="ctrlTicketPC.php?accion=delete&id_ticket=<?php echo $datosTicketPC['id_ticket']; ?>&st=<?php echo $datosTicketPC['st']; ?>"><button type="button" class="btn btn-danger bi bi-trash">Eliminar</button></a>
                 </div>
                 </td>
 

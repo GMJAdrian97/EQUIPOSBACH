@@ -1,5 +1,5 @@
 <div id="containerFormularios">
-    <h1>&bull; Registro de Usuario &bull;</h1>
+    <h1>&bull; Registro de Usuario Previligiado &bull;</h1>
     <div class="underline">
     </div>
     <div class="icon_wrapper">
@@ -38,6 +38,7 @@
                             <?php endforeach; ?>
             </select>
         </div>
+        <br/><br/><br/><br/><br/>
         <div class="Password">
             <label for="Password">Password</label>
             <input type="text" name="pass" value="<?php echo(isset($st)) ? $datosEquipo['st']:"";?>" class="form-control"

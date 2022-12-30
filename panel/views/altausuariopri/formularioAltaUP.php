@@ -41,6 +41,7 @@
                 <?php endforeach; ?>
             </select>
         </div>
+        <br/><br/><br/><br/><br/>
         <div class="Password">
             <label for="Password">Password</label>
             <input type="text" name="pass" value="<?php echo(isset($id_usuariopri)) ? $datosUsuariopri['pass']:"";?>"

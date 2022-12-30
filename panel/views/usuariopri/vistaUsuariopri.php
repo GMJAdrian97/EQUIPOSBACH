@@ -5,7 +5,6 @@
         <thead>
             <tr>
             <th scope="col">#</th>
-            <th scope="col">Usuario</th>
             <th scope="col">Correo</th>
             <th scope="col">Contraseña</th>
             </tr>
@@ -23,8 +22,8 @@
 
                 <td>  
                     <div>
-                    <i class="btn btn-success bi-pencil"><a href="ctrlUsuariopri.php?accion=modify&id_usuariopri=<?php echo $datosUsuariopri['id_usuariopri']; ?>">Modificar</a></i>
-                    <i class="btn btn-danger bi bi-trash"><a href="ctrlUsuariopri.php?accion=delete&id_usuariopri=<?php echo $datosUsuariopri['id_usuariopri']; ?>">Eliminar</a></i>
+                    <a href="ctrlUsuariopri.php?accion=modify&id_usuariopri=<?php echo $datosUsuariopri['id_usuariopri']; ?>"><button type="button" class="btn btn-success bi-pencil">Modificar</button></a>
+                    <a href="ctrlUsuariopri.php?accion=delete&id_usuariopri=<?php echo $datosUsuariopri['id_usuariopri']; ?>"><button type="button" class="btn btn-danger bi bi-trash">Eliminar</button></a>
                 </div>
                 </td>
 

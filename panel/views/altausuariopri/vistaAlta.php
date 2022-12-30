@@ -1,4 +1,4 @@
-<h1> ¡Altas de Usuario! </h1>
+<h1> ¡Altas de Usuarios priviligiados! </h1>
 <a href="crtlAlta.php?accion=new" class="btn btn-primary" style="margin:30px"> Añadir nuevo Usuario</a>
 
 <table class="table" style=" background-color: rgba(0, 0, 0, 0.3); color: white" >
@@ -6,6 +6,7 @@
             <tr>
             <th scope="col">Usario Privilegiado</th>
             <th scope="col">Rol</th>
+            <th scope="col">Password</th>
             <th scope="col">Opciones</th>
             </tr>
         </thead>
@@ -18,6 +19,7 @@
             <tr>
             <td><?php echo $datosUSROL['correo'] ?></td>
             <td><?php echo $datosUSROL['rol'] ?></td>
+            <td><?php echo $datosUSROL['pass'] ?></td>
 
                 <td>  
                     <div>

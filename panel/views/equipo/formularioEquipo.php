@@ -45,8 +45,9 @@
                 value="<?php echo(isset($st)) ? $datosEquipo['precio_adquisicion']:"";?>" class="form-control"
                 id="inlineFormInputGroup" placeholder="$" required />
         </div>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <div class="subject">
-        <!-- <label for="subject">Marca</label> -->
+        <label for="subject">Marca</label>
             <select placeholder="Subject line" id="subject_input" name="id_marca" required>
                 <option selected>Choose...</option>
                 <?php foreach ($datosMarca as $key => $value): 

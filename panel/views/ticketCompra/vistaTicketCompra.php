@@ -26,8 +26,8 @@
             <td><?php echo $datosTicketCompra['st'] ?></td>
                 <td>  
                     <div>
-                    <i class="btn btn-success bi-pencil"><a href="ctrlTicketCompra.php?accion=modify&id_compra=<?php echo $datosTicketCompra['id_compra']; ?>">Modificar</a></i>
-                    <i class="btn btn-danger bi bi-trash"><a href="ctrlTicketCompra.php?accion=delete&id_compra=<?php echo $datosTicketCompra['id_compra']; ?>">Eliminar</a></i>
+                    <a href="ctrlTicketCompra.php?accion=modify&id_compra=<?php echo $datosTicketCompra['id_compra']; ?>"><button type="button" class="btn btn-success bi-pencil">Modificar</button></a>
+                    <a href="ctrlTicketCompra.php?accion=delete&id_compra=<?php echo $datosTicketCompra['id_compra']; ?>"><button type="button" class="btn btn-danger bi bi-trash">Eliminar</button></a>
                 </div>
                 </td>
 

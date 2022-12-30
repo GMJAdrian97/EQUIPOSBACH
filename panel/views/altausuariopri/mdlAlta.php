@@ -6,12 +6,13 @@
         public function read(){
             $this->conexion();
             $sql = "SELECT u.id_usuariopri,
-                           u.correo as correo,
-                           r.id_rol,
-                           r.nombre_rol as rol
-                    FROM usuariopri_rol ur
-                    INNER JOIN rol r on ur.id_rol = r.id_rol
-                    INNER JOIN usuariopri u on ur.id_usuariopri = u.id_usuariopri;";
+            u.correo as correo,
+            r.id_rol,
+            r.nombre_rol as rol,
+            u.pass
+     FROM usuariopri_rol ur
+     INNER JOIN rol r on ur.id_rol = r.id_rol
+     INNER JOIN usuariopri u on ur.id_usuariopri = u.id_usuariopri;";
             $stmt = $this->con->prepare($sql);
             $stmt->execute();
             $datosModelos = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -80,16 +81,49 @@
         //////////////////////////////////////// Metodo Update ////////////////////////////////////////
         public function update($datosUP,$id_rol,$id_usuariopri){
             $this->conexion();
+                    $this->con->beginTransaction();
+                    try{
+                        $sql = "UPDATE usuariopri_rol 
+                                SET id_rol = :id_rolM
+                                WHERE id_rol = :id_rol AND id_usuariopri = :id_usuariopri;";
+                        $stmt = $this->con->prepare($sql);
+                        $stmt -> bindParam(':id_rolM', $datosUP['id_rol'], PDO::PARAM_INT);
+                        $stmt->bindParam(':id_usuariopri', $id_usuariopri, PDO::PARAM_INT);
+                        $stmt->bindParam(':id_rol', $id_rol, PDO::PARAM_INT);
+                        $rs = $stmt->execute();
+                        if ($stmt->rowCount()>= 0) {
+                            $sql =  "UPDATE usuariopri
+                                     SET pass = :passM 
+                                     WHERE id_usuariopri = :id_usuariopri;";
+                            $stmt = $this->con->prepare($sql);
+                            $datosUP['pass'] = md5($datosUP['pass']);
+                            $stmt -> bindParam(':passM', $datosUP['pass'], PDO::PARAM_STR);
+                            $stmt->bindParam(':id_usuariopri', $id_usuariopri, PDO::PARAM_INT);
+                            $rs = $stmt->execute();
+                            $this->con->commit();
+                        }
+                        
+                        return true;
+                    }catch (Exception $e){
+                    $this->con->rollback();
+                    return false;
+                    }
+        }
+        
+        /* public function update($datosUP,$id_rol,$id_usuariopri){
+            $this->conexion();
             $sql = "UPDATE usuariopri_rol 
-                     SET id_rol = :id_rolM 
+                     SET id_rol = :id_rolM,
+                     pass = :passM
                     WHERE id_rol = :id_rol AND id_usuariopri = :id_usuariopri;";
             $stmt = $this->con->prepare($sql);
             $stmt -> bindParam(':id_rolM', $datosUP['id_rol'], PDO::PARAM_INT);
+            $stmt -> bindParam(':passM', $datosUP['pass'], PDO::PARAM_STR);
             $stmt->bindParam(':id_usuariopri', $id_usuariopri, PDO::PARAM_INT);
             $stmt->bindParam(':id_rol', $id_rol, PDO::PARAM_INT);
             $rs = $stmt->execute();
             return $rs;
-        }
+        } */
 
 
         public function DropRegister($id_usuariopri, $id_rol){

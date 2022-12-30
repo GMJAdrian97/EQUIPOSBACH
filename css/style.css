@@ -152,6 +152,16 @@
     width: 45%;
   }
 
+  .Pass2{
+    float: right;
+    width: 45%;
+  }
+
+  .Rol{
+    float: right;;
+    width: 45%;
+  }
+
   .US_RED{
     float: right;
     width: 45%;
@@ -187,10 +197,34 @@
     width: 45%;
   }
 
+  .Accion{
+    float: left;
+    width: 45%;
+  }
+
+  .ST2{
+    float: right;
+    width: 45%;
+  }
+
+  .Descripcion2{
+    float: right;
+    width: 45%;
+  }
+
+  .Empleado2{
+    float: right;
+    width: 45%;
+  }
+
   .DescripLbl{
     float: left;
     width: 45%;
   }
+
+  .Empleado{
+    float: left;
+    width: 45%;}
 
   .submit{
     text-align: center;
