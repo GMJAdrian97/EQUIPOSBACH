@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 08-12-2022 a las 22:35:06
+-- Tiempo de generación: 02-01-2023 a las 02:35:02
 -- Versión del servidor: 5.7.36
 -- Versión de PHP: 7.4.26
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `departamento` (
   `id_departamento` int(11) NOT NULL AUTO_INCREMENT,
   `nombreD` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id_departamento`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `departamento`
@@ -71,9 +71,9 @@ CREATE TABLE IF NOT EXISTS `equipo` (
 
 INSERT INTO `equipo` (`st`, `nombre_pc`, `descripcion`, `accesorios`, `tipo_equipo`, `precio_venta`, `precio_adquisicion`, `id_marca`, `modelo`, `estado`) VALUES
 ('22PTL4', 'MacBook', 'Laptop apple', 'Cargador y candado MOCHILA', 'Laptop', 2000, 18000, 1, 'MacBook pro ', 'Disponible'),
-('22SDF34', 'Latitude', 'Laptop dell', 'nada', 'laptop', 5000, 25000, 2, 'ff', 'Disponible'),
+('22SDF34', 'Latitude', 'Laptop dell', 'nada', 'laptop', 5000, 25000, 2, 'Latitude 5480', 'Ocupado'),
 ('aaaaa', 'Latitude', 'hhmfm', 'Cargador y candado', 'Laptop', 2000, 18000, 2, 'Latitude 5480', 'Disponible'),
-('DDEE2332', 'ddd', 'dddd', 'ddd', 'laptop', 5000, 25000, 1, 'Choose...', 'Disponible');
+('DDEE2332', 'ddd', 'dddd', 'ddd', 'laptop', 5000, 25000, 1, 'Latitude 5480', 'Disponible');
 
 -- --------------------------------------------------------
 
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `marca` (
   `id_modelo` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_marca`),
   KEY `fk_id_modelo` (`id_modelo`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `marca`
@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `modelo` (
   `id_modelo` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_modelo` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id_modelo`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `modelo`
@@ -117,8 +117,7 @@ CREATE TABLE IF NOT EXISTS `modelo` (
 
 INSERT INTO `modelo` (`id_modelo`, `nombre_modelo`) VALUES
 (1, 'Latitude 5480'),
-(2, 'MacBook pro '),
-(3, 'ff');
+(2, 'MacBook pro ');
 
 -- --------------------------------------------------------
 
@@ -131,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `puesto` (
   `id_puesto` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id_puesto`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `puesto`
@@ -153,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `renovacion` (
   `id_renovacion` int(11) NOT NULL AUTO_INCREMENT,
   `descipcion_renovacion` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_renovacion`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `renovacion`
@@ -176,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `rol` (
   `id_rol` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_rol` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id_rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `rol`
@@ -203,14 +202,16 @@ CREATE TABLE IF NOT EXISTS `ticket_compra` (
   PRIMARY KEY (`id_compra`),
   KEY `fk_no_empleado2` (`no_empleado`),
   KEY `fk_sd2` (`st`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `ticket_compra`
 --
 
 INSERT INTO `ticket_compra` (`id_compra`, `fecha`, `descripcion`, `no_empleado`, `st`) VALUES
-(4, '2022-12-07', 'hhmfm', 10, '22PTL4');
+(4, '2022-12-07', 'Cargador', 10, '22PTL4'),
+(5, '2022-12-29', 'Cargador, Mochila, Candado', 10, '22PTL4'),
+(6, '2022-12-29', 'Cargador', 111111, 'DDEE2332');
 
 -- --------------------------------------------------------
 
@@ -235,7 +236,14 @@ CREATE TABLE IF NOT EXISTS `ticket_pc` (
   KEY `fk_no_empleado` (`no_empleado`),
   KEY `fk_sd` (`st`),
   KEY `fk_id_renovacion` (`id_renovacion`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `ticket_pc`
+--
+
+INSERT INTO `ticket_pc` (`id_ticket`, `fecha`, `descripcion`, `contrasena_admin`, `contrasena_system`, `contrasena_disco`, `contrasena_Wiadmin`, `no_empleado`, `st`, `id_renovacion`) VALUES
+(6, '2022-12-29', 'hhmfm', 'rk5tSPJmjw', '6G9HS1pCzu', 'By2ehqntrN', 'n1ClZVEdzY', 883388, '22SDF34', 4);
 
 -- --------------------------------------------------------
 
@@ -248,7 +256,7 @@ CREATE TABLE IF NOT EXISTS `un` (
   `id_un` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id_un`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `un`
@@ -287,7 +295,9 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 
 INSERT INTO `usuario` (`no_empleado`, `nombre`, `correo`, `usuario_red`, `no_celular`, `id_puesto`, `id_un`, `id_departamento`) VALUES
 (10, 'Jorge Adrian Garcia Martinez', 'adrian19_97@oulook.com', 'GMJA', 123, 1, 1, 1),
-(883388, 'LALA', 'LALALA@LALA.COM', 'PST', 123, 2, 2, 1);
+(90, 'Dieguito', 'lll@oulook.commmm', 'YYY0', 5777, 1, 1, 2),
+(111111, 'PEPE', 'PEPE@HOTMAIL.COM', 'AAA', 123, 1, 1, 3),
+(883388, 'LEEEEE', 'LALALA@LALA.COMMMM', '123456', 1234678, 1, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -302,16 +312,18 @@ CREATE TABLE IF NOT EXISTS `usuariopri` (
   `pass` varchar(32) DEFAULT NULL,
   `token` varchar(16) DEFAULT NULL,
   PRIMARY KEY (`id_usuariopri`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuariopri`
 --
 
 INSERT INTO `usuariopri` (`id_usuariopri`, `correo`, `pass`, `token`) VALUES
-(29, 'adrian19_97@oulook.com', '202cb962ac59075b964b07152d234b70', NULL),
-(36, 'LALALA@LALA.COM', 'c4ca4238a0b923820dcc509a6f75849b', NULL),
-(37, 'LALALA@LALA.COM', 'c4ca4238a0b923820dcc509a6f75849b', NULL);
+(40, 'adrian19_97@oulook.com', 'c4ca4238a0b923820dcc509a6f75849b', NULL),
+(42, 'lll@oulook.commmm', 'f688ae26e9cfa3ba6235477831d5122e', NULL),
+(43, 'LALALA@LALA.COMMMM', '202cb962ac59075b964b07152d234b70', NULL),
+(44, 'PEPE@HOTMAIL.COM', 'c4ca4238a0b923820dcc509a6f75849b', NULL),
+(45, 'adrian19_97@oulook.com', 'b59c67bf196a4758191e42f76670ceba', NULL);
 
 -- --------------------------------------------------------
 
@@ -332,8 +344,10 @@ CREATE TABLE IF NOT EXISTS `usuariopri_rol` (
 --
 
 INSERT INTO `usuariopri_rol` (`id_rol`, `id_usuariopri`) VALUES
-(3, 29),
-(4, 36);
+(3, 40),
+(6, 42),
+(3, 43),
+(6, 44);
 
 --
 -- Restricciones para tablas volcadas
