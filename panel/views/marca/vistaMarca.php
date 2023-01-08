@@ -1,38 +1,56 @@
-<h1> ¡marca! </h1>
-<a href="ctrlMarca.php?accion=new" class="btn btn-primary" style="margin:30px"> Añadir nuevo marca</a>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col">
+        <br />
+        <h1> ¡marca! </h1>
+        <table id="containerTablas" class="display" style="text-align:center;">
+            <thead>
+                <tr>
+                    <th scope="col" style="text-align:center;">#</th>
+                    <th scope="col" style="text-align:center;">Marca</th>
+                    <th scope="col" style="text-align:center;">Modelo</th>
+                    <th scope="col" style="text-align:center;">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
 
-<table class="table" >
-        <thead>
-            <tr>
-            <th scope="col">#</th>
-            <th scope="col">Marca</th>
-            <th scope="col">Modelo</th>
-            <th scope="col">Opciones</th>
-            </tr>
-        </thead>
-        <tbody>
-        
-            <?php
+                <?php
                 foreach ($datosMarcas as $key => $datosMarca):
             ?>
 
-            <tr>
-            <td><?php echo $datosMarca['id_marca'] ?></td>
-            <td><?php echo $datosMarca['nombre_marca'] ?></td>
-            <td><?php echo $datosMarca['nombre_modelo'] ?></td>
+                <tr>
+                    <td><?php echo $datosMarca['id_marca'] ?></td>
+                    <td><?php echo $datosMarca['nombre_marca'] ?></td>
+                    <td><?php echo $datosMarca['nombre_modelo'] ?></td>
 
-                <td>  
-                    <div>
-                    <a href="ctrlMarca.php?accion=modify&id_marca=<?php echo $datosMarca['id_marca']; ?>"><button type="button" class="btn btn-success bi-pencil">Modificar</button></a>
-                    <a href="ctrlMarca.php?accion=delete&id_marca=<?php echo $datosMarca['id_marca']; ?>"><button type="button" class="btn btn-danger bi bi-trash">Eliminar</button></a>
-                </div>
-                </td>
+                    <td>
+                        <div>
+                            <a href="ctrlMarca.php?accion=modify&id_marca=<?php echo $datosMarca['id_marca']; ?>"><button
+                                    id="table_button" type="button" class="btn btn-success bi-pencil">
+                                    Modificar</button></a>
+                            <a href="ctrlMarca.php?accion=delete&id_marca=<?php echo $datosMarca['id_marca']; ?>"><button
+                                    id="table_button" type="button" class="btn btn-danger bi bi-trash">
+                                    Eliminar</button></a>
+                        </div>
+                    </td>
 
-            </tr>
+                </tr>
 
-            <?php
+                <?php
                 endforeach;
             ?>
 
-        </tbody> 
-                </table>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-1"></div>
+</div>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col">
+        <br />
+        <a href="ctrlMarca.php?accion=new" id="table_button" class="btn btn-primary" style="float: right;"> Añadir nuevo
+            marca</a>
+    </div>
+    <div class="col-1"></div>
+</div>

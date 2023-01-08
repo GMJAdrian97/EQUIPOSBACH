@@ -1,17 +1,13 @@
-<div class="contenedor">
-   <!--  <img src="../../../Imagenes/FondoAdmin.jpg" alt="ImagenesF" /> -->
-    <div class="centradoRoles">
-    <h1> ¡Roles! </h1>
-    <a href="ctrlRol.php?accion=new" class="btn btn-primary" style="margin:30px"> Añadir nuevo rol</a>
-    <div class="row">
-        <div class="col">
-            <div class="col">
-            <table class="table" style=" background-color: rgba(0, 0, 0, 0.3); color: white" >
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col">
+    <br/><h1> ¡Roles! </h1>
+    <table id="containerTablas" class="display" style="text-align:center;">
             <thead>
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">rol</th>
-            <th scope="col">Opciones</th>
+            <th scope="col" style="text-align:center;">#</th>
+            <th scope="col" style="text-align:center;">rol</th>
+            <th scope="col" style="text-align:center;">Opciones</th>
             </tr>
         </thead>
         <tbody>
@@ -26,8 +22,8 @@
 
                 <td>  
                     <div>
-                    <a href="ctrlRol.php?accion=modify&id_rol=<?php echo $datosRol['id_rol']; ?>"><button type="button" class="btn btn-success bi-pencil">Modificar</button></a>
-                    <a href="ctrlRol.php?accion=delete&id_rol=<?php echo $datosRol['id_rol']; ?>"><button type="button" class="btn btn-danger bi bi-trash">Eliminar</button></a>
+                    <a href="ctrlRol.php?accion=modify&id_rol=<?php echo $datosRol['id_rol']; ?>"><button id="table_button" type="button" class="btn btn-success bi-pencil">Modificar</button></a>
+                    <a href="ctrlRol.php?accion=delete&id_rol=<?php echo $datosRol['id_rol']; ?>"><button id="table_button" type="button" class="btn btn-danger bi bi-trash">Eliminar</button></a>
                 </div>
                 </td>
 
@@ -39,10 +35,15 @@
 
         </tbody> 
                 </table>
-            </div>
-            <div class="col">
-        </div>
     </div>
-  </div>
+    <div class="col-1"></div>
 </div>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col" >
+        <br />
+    <a href="ctrlRol.php?accion=new" id="table_button" class="btn btn-primary" style="float: right;"> Añadir nuevo Rol</a>
+    </div>
+    <div class="col-1"></div>
 </div>
+

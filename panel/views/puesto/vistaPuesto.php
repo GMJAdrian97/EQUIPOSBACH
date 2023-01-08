@@ -1,36 +1,51 @@
-<h1> ¡Puesto! </h1>
-<a href="ctrlPuesto.php?accion=new" class="btn btn-primary" style="margin:30px"> Añadir nuevo puesto</a>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col">
+        <br />
+        <h1> ¡Puesto! </h1>
+        <table id="containerTablas" class="display" style="text-align:center;">
+            <thead>
+                <tr>
+                    <th scope="col" style="text-align:center;">#</th>
+                    <th scope="col" style="text-align:center;">Puesto</th>
+                    <th scope="col" style="text-align:center;">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
 
-<table class="table" style=" background-color: rgba(0, 0, 0, 0.3); color: white" >
-        <thead>
-            <tr>
-            <th scope="col">#</th>
-            <th scope="col">Puesto</th>
-            <th scope="col">Opciones</th>
-            </tr>
-        </thead>
-        <tbody>
-        
-            <?php
+                <?php
                 foreach ($datosPuestos as $key => $datosPuesto):
             ?>
 
-            <tr>
-            <td><?php echo $datosPuesto['id_puesto'] ?></td>
-            <td><?php echo $datosPuesto['nombre'] ?></td>
+                <tr>
+                    <td><?php echo $datosPuesto['id_puesto'] ?></td>
+                    <td><?php echo $datosPuesto['nombre'] ?></td>
 
-                <td>  
-                    <div>        
-                    <a href="ctrlPuesto.php?accion=modify&id_puesto=<?php echo $datosPuesto['id_puesto']; ?>"><button type="button" class="btn btn-success bi-pencil">Modificar</button></a>
-                    <a href="ctrlPuesto.php?accion=delete&id_puesto=<?php echo $datosPuesto['id_puesto']; ?>"><button type="button" class="btn btn-danger bi bi-trash">Eliminar</button></a>
-                </div>
-                </td>
+                    <td>
+                        <div>
+                            <a href="ctrlPuesto.php?accion=modify&id_puesto=<?php echo $datosPuesto['id_puesto']; ?>"><button
+                                    type="button" id="table_button" class="btn btn-success bi-pencil">Modificar</button></a>
+                            <a href="ctrlPuesto.php?accion=delete&id_puesto=<?php echo $datosPuesto['id_puesto']; ?>"><button
+                                    type="button" id="table_button" class="btn btn-danger bi bi-trash">Eliminar</button></a>
+                        </div>
+                    </td>
 
-            </tr>
+                </tr>
 
-            <?php
+                <?php
                 endforeach;
             ?>
 
-        </tbody> 
-                </table>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-1"></div>
+</div>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col">
+        <br />
+        <a  id="table_button"  href="ctrlPuesto.php?accion=new" class="btn btn-primary" style="margin:30px; float: right;"> Añadir nuevo puesto</a>
+    </div>
+    <div class="col-1"></div>
+</div>

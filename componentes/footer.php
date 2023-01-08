@@ -62,19 +62,42 @@ function GenerarPassWin() {
 
 
 <!-- Script para las tablas con paginacion -->
-    <!--jQuery library file -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js">
-    </script>
+<!--jQuery library file -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js">
+</script>
 
-    <!--Datatable plugin JS library file -->
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
-    </script>
-    <script>
-    /* Initialization of datatables */
-    $(document).ready(function() {
-        $('table.display').DataTable();
+<!--Datatable plugin JS library file -->
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
+</script>
+<script>
+/* Initialization of datatables */
+$(document).ready(function() {
+    $('table.display').DataTable({
+        language: {
+            processing: "Tratamiento en curso...",
+            search: "Buscar&nbsp;:",
+            lengthMenu: "Agrupar de  _MENU_ items",
+            info: "Mostrando del item _START_ al _END_ de un total de _TOTAL_ items",
+            infoEmpty: "No existen datos",
+            infoFiltered: "(Filtrado de _MAX_ elementos en total)",
+            infoPostFix: "",
+            loadingRecords: "Cargando...",
+            zeroRecords: "No se econtraron resultados en tu busqueda",
+            emptyTable: "No hay datos disponibles en la tabla",
+            paginate: {
+                first: "Primero",
+                previous: "Anteriror",
+                next: "Next",
+                last: "Ultimo"
+            },
+            aria: {
+                sortAscending: ": Active para ordenar la columna en orden ascendente",
+                sortDescending: ": Active para ordenar la columna en orden descendente"
+            }
+        }
     });
-    </script>
+});
+</script>
 <!-- Script para las tablas con paginacion -->
 
 

@@ -1,5 +1,5 @@
 <?php
-    require_once('mdlusuariopri.php');
+    require_once('mdlUsuariopri.php');
     //$sistema -> validarusuariopri('Administrador');
     $id_usuariopri = NULL;
     $accion = NULL;
@@ -57,7 +57,7 @@
             //$usuariopri->message($resultado, ($resultado)?"El usuariopri se elimino correctamente": "Ocurrio un error al eliminar el usuariopri");
         default:
             $datosUsuariopris = $usuariopri->read();
-            require_once('vistausuariopri.php');
+            require_once('vistaUsuariopri.php');
     }
 
 

@@ -63,7 +63,7 @@
             require_once('vistaAlta.php');
             break;
 
-        default: 
+        default:    
             $datosUSpri = $usuariopri->read();
             $datosUSROLs = $registro ->read();
             require_once('vistaAlta.php');

@@ -1,4 +1,4 @@
-/* Formularios */
+/* ---------------------------- Formularios ----------------------------  */
   @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
   button {
@@ -54,17 +54,10 @@
     width: 80px;
   }
 
-  .icon_wrapper {
-    margin: 50px auto 0;
-    width: 100%;
-  }
-
-  .icon {
-    display: block;
+  #icon{
     fill: #474544;
-    height: 50px;
-    margin: 0 auto;
-    width: 50px;
+    height: 5000px;
+    width: 5000px;
   }
 
   .nombre {
@@ -167,7 +160,7 @@
     width: 45%;
   }
 
-  
+
   .Celular{
     float: left;
     width: 45%;
@@ -329,11 +322,6 @@
       font-size: 18px;
     }
 
-    .icon {
-      height: 35px;
-      width: 35px;
-    }
-
     .underline {
       width: 53px;
     }
@@ -345,4 +333,30 @@
       font-size: 0.875em;
     }
   }
-/* Fornularios */
+/* ---------------------------- Formularios ----------------------------  */
+
+/* ---------------------------- Tablas ----------------------------  */
+  #containerTablas{
+    border: solid 3px #474544;
+    max-width: 1500px;
+    position: relative;
+  }
+
+  #table_button {
+    display: inline-block;
+    background: none;
+    border: solid 2px #474544;
+    color: #474544;
+    cursor: pointer;
+    font-family: "Helvetica", Arial, sans-serif;
+    font-size: 0.875em;
+    font-weight: bold;
+    outline: none;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+/* ---------------------------- Tablas ----------------------------  */
