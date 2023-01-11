@@ -1,3 +1,4 @@
+<section class="page-content">
 <div id="containerFormularios">
     <h1>&bull; <?php echo(isset($st))? "Modifica a tu ": " Introduce tu nuevo ";?>Equipo &bull;</h1>
     <div class="underline">
@@ -97,3 +98,4 @@
         </div>
     </form><!-- // End form -->
 </div><!-- // End #container -->
+</section>

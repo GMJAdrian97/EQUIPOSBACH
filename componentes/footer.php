@@ -98,6 +98,7 @@ $(document).ready(function() {
     });
 });
 </script>
+<script src="/EQUIPOSBACH/JS/das.js"></script>
 <!-- Script para las tablas con paginacion -->
 
 

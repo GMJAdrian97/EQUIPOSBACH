@@ -1,3 +1,4 @@
+<section class="page-content">
 <div class="row">
     <div class="col-1"></div>
     <div class="col">
@@ -10,9 +11,9 @@
                     <th scope="col" style="text-align:center;">Nombre</th>
                     <th scope="col" style="text-align:center;">Descripcion</th>
                     <th scope="col" style="text-align:center;">Accesorios</th>
-                    <th scope="col" style="text-align:center;">Tipo de equipo</th>
-                    <th scope="col" style="text-align:center;">Precio de venta</th>
-                    <th scope="col" style="text-align:center;">Precio de adquisicion</th>
+                    <th scope="col" style="text-align:center;">Tipo/E</th>
+                    <th scope="col" style="text-align:center;">Precio/V</th>
+                    <th scope="col" style="text-align:center;">Precio/A</th>
                     <th scope="col" style="text-align:center;">marca</th>
                     <th scope="col" style="text-align:center;">modelo</th>
                     <th scope="col" style="text-align:center;">estado</th>
@@ -41,11 +42,11 @@
                     <td>
                         <div>
                             <a href="ctrlEquipo.php?accion=modify&st=<?php echo $datosEquipo['st']; ?>"><button
-                                    type="button" id="table_button"
-                                    class="btn btn-success bi-pencil">Modificar</button></a>
+                                    type="button" id="table_button2"
+                                    class="btn btn-success bi-pencil"> Editar</button></a>
                             <a href="ctrlEquipo.php?accion=delete&st=<?php echo $datosEquipo['st']; ?>"><button
-                                    type="button" id="table_button"
-                                    class="btn btn-danger bi bi-trash">Eliminar</button></a>
+                                    type="button" id="table_button2"
+                                    class="btn btn-danger bi bi-trash"> Borrar</button></a>
                         </div>
                     </td>
 
@@ -64,8 +65,9 @@
     <div class="col-1"></div>
     <div class="col">
         <br />
-        <a href="ctrlEquipo.php?accion=new" id="table_button" class="btn btn-primary" style="margin:30px"> Añadir nuevo
+        <a href="ctrlEquipo.php?accion=new" id="table_button" class="btn btn-primary" style="float: right;"> Añadir nuevo
             Equipos</a>
     </div>
     <div class="col-1"></div>
 </div>
+</section>
