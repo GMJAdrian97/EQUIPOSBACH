@@ -1,4 +1,5 @@
-<div id="containerFormularios">
+<section class="page-content">
+    <div id="containerFormularios">
     <h1>&bull; <?php echo(isset($id_un))? "Modifica a tu ": " Introduce tu nueva ";?>Unidad de Negocio &bull;</h1>
     <div class="underline">
     </div>
@@ -14,3 +15,4 @@
         </div>
     </form><!-- // End form -->
 </div><!-- // End #container -->
+</section>

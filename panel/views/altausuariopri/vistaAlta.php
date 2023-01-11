@@ -1,6 +1,4 @@
-<div class="row">
-    <div class="col-1"></div>
-    <div class="col">
+<section class="page-content">
         <br />
         <h1> ¡Altas de Usuarios priviligiados! </h1>
         <table id="containerTablas" class="display" style="text-align:center;">
@@ -44,15 +42,7 @@
 
             </tbody>
         </table>
-    </div>
-    <div class="col-1"></div>
-</div>
-<div class="row">
-    <div class="col-1"></div>
-    <div class="col">
         <br />
         <a id="table_button" href="crtlAlta.php?accion=new" class="btn btn-primary" style="margin:30px; float: right;">
             Añadir nuevo Usuario</a>
-    </div>
-    <div class="col-1"></div>
-</div>
+            </section>

@@ -1,6 +1,4 @@
-<div class="row">
-    <div class="col-1"></div>
-    <div class="col">
+<section class="page-content">
         <br />
         <h1> ¡Modelo! </h1>
         <table id="containerTablas" class="display" style="text-align:center;">
@@ -40,14 +38,7 @@
 
             </tbody>
         </table>
-    </div>
-    <div class="col-1"></div>
-</div>
-<div class="row">
-    <div class="col-1"></div>
-    <div class="col">
         <br />
-        <a href="ctrlModelo.php?accion=new" id="table_button" class="btn btn-primary" style="margin:30px"> Añadir nuevo modelo</a>
-    </div>
-    <div class="col-1"></div>
-</div>
+        <a href="ctrlModelo.php?accion=new" id="table_button" class="btn btn-primary" style="float: right;"> Añadir nuevo modelo</a>
+
+</section>

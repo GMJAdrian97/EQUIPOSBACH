@@ -140,10 +140,10 @@
         </button>
         <ul class="admin-menu">
             <li class="menu-heading">
-                <h3>Administrar</h3>
+                <h3>Equipos</h3>
             </li>
             <li>
-                <a href="">
+                <a href="/EQUIPOSBACH/panel/views/equipo/ctrlEquipo.php">
                     <svg>
                         <use xlink:href="#pages"></use>
                     </svg>
@@ -151,70 +151,97 @@
                 </a>
             </li>
             <li>
-                <a href="#0">
+                <a href="/EQUIPOSBACH/panel/views/modelo/ctrlModelo.php">
                     <svg>
                         <use xlink:href="#users"></use>
                     </svg>
-                    <span>Alta Usuarios</span>
+                    <span>Alta Modelo</span>
                 </a>
             </li>
             <li>
-                <a href="#0">
+                <a href="/EQUIPOSBACH/panel/views/marca/ctrlMarca.php">
                     <svg>
                         <use xlink:href="#trends"></use>
                     </svg>
-                    <span>Trends</span>
+                    <span>Alta Marca</span>
                 </a>
             </li>
             <li>
-                <a href="#0">
+                <a href="/EQUIPOSBACH/panel/views/ticketCompra/ctrlTicketCompra.php">
                     <svg>
                         <use xlink:href="#collection"></use>
                     </svg>
-                    <span>Collection</span>
+                    <span>Venta Equipo</span>
                 </a>
             </li>
             <li>
-                <a href="#0">
+                <a href="/EQUIPOSBACH/panel/views/ticketPC/ctrlTicketPC.php">
                     <svg>
                         <use xlink:href="#comments"></use>
                     </svg>
-                    <span>Comments</span>
+                    <span>Asignacion Equipo</span>
                 </a>
             </li>
             <li>
-                <a href="#0">
+            <a href="/EQUIPOSBACH/panel/views/renovacion/ctrlRenovacion.php">
                     <svg>
                         <use xlink:href="#appearance"></use>
                     </svg>
-                    <span>Appearance</span>
+                    <span>Conceptos</span>
                 </a>
             </li>
             <li class="menu-heading">
-                <h3>Settings</h3>
+                <h3>Usuarios</h3>
             </li>
             <li>
-                <a href="#0">
+                <a href="/EQUIPOSBACH/panel/views/rol/ctrlRol.php">
                     <svg>
-                        <use xlink:href="#settings"></use>
+                        <use xlink:href="#users"></use>
                     </svg>
-                    <span>Settings</span>
+                    <span>Alta Rol</span>
                 </a>
             </li>
             <li>
-                <a href="#0">
+                <a href="/EQUIPOSBACH/panel/views/puesto/ctrlPuesto.php">
                     <svg>
-                        <use xlink:href="#options"></use>
+                        <use xlink:href="#users"></use>
                     </svg>
-                    <span>Options</span>
+                    <span>Alta Puesto</span>
                 </a>
             </li>
             <li>
-                <a href="#0">
+                <a href="/EQUIPOSBACH/panel/views/usuarios/ctrlUsuario.php">
                     <svg>
                         <use xlink:href="#charts"></use>
                     </svg>
-                    <span>Charts</span>
+                    <span>Alta Usurios</span>
+                </a>
+            </li>
+            <li>
+                <a href="/EQUIPOSBACH/panel/views/altausuariopri/crtlAlta.php">
+                    <svg>
+                        <use xlink:href="#charts"></use>
+                    </svg>
+                    <span>Alta Usurios Privilegiados</span>
+                </a>
+            </li>
+            <li class="menu-heading">
+                <h3>Unidades</h3>
+            </li>
+            <li>
+            <a href="/EQUIPOSBACH/panel/views/un/ctrlUn.php">
+                    <svg>
+                        <use xlink:href="#options"></use>
+                    </svg>
+                    <span>Alta UN</span>
+                </a>
+            </li>
+            <li>
+            <a href="/EQUIPOSBACH/panel/views/departamento/ctrlDepartamento.php">
+                    <svg>
+                        <use xlink:href="#options"></use>
+                    </svg>
+                    <span>Departamento</span>
                 </a>
             </li>
             <li>

@@ -1,6 +1,4 @@
-<div class="row">
-    <div class="col-1"></div>
-    <div class="col">
+<section class="page-content">
         <br /> <h1> ¡Departamento! </h1>
         <table id="containerTablas" class="display" style="text-align:center;">
             <thead>
@@ -39,15 +37,7 @@
 
             </tbody>
         </table>
-    </div>
-    <div class="col-1"></div>
-</div>
-<div class="row">
-    <div class="col-1"></div>
-    <div class="col">
         <br />
         <a href="ctrlDepartamento.php?accion=new" id="table_button" class="btn btn-primary" style="margin:30px; float: right;"> Añadir nuevo
             departamento</a>
-    </div>
-    <div class="col-1"></div>
-</div>
+            </section>
