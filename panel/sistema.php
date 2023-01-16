@@ -28,8 +28,42 @@
         }
 
          //Manejador de mensajes 
-         public function message($texto){
-            require_once("modal.php");
+         public function message($tipo,$texto){
+            switch($tipo){
+                case 0:
+                    $color = "danger";
+                     break;
+                case 1:
+                    $color = "success";
+                    break;
+
+                default: $color = "dark";
+                    break;
+            }
+            require_once("message.php");
+        }
+
+
+
+        //Login
+        public function login($correo,$pass){
+            $this->connect();
+
+            if($this->validarCorreo($correo)){
+                $pass = md5($pass);
+                $sql = "SELECT * FROM usuariopri 
+                    WHERE correo = :correo 
+                    and pass = :pass";
+                $stmt = $this->con->prepare($sql);
+                $stmt -> bindParam(':correo', $correo, PDO::PARAM_STR);
+                $stmt -> bindParam(':pass', $pass, PDO::PARAM_STR);
+                $stmt->execute();
+                $datos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                if(isset($datos[0])){
+                    return true;
+                }
+                return false; 
+            }
         }
     }
 
