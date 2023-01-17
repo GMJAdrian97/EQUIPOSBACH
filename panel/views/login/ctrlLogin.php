@@ -1,6 +1,6 @@
 <?php
     require_once('../../sistema.php');
-    require_once('../Usuario/mdlUsuario.php');
+    require_once('../usuariopri/mdlUsuariopri.php');
     $accion = NULL;
     if(isset($_GET['accion'])){
         $accion = $_GET['accion'];
@@ -10,8 +10,8 @@
 
         case 'login';
                 $datos = $_POST;
-                if($usuario->login($datos['username'], $datos['password'])){
-                    $usuario -> credentials($datos['username']);
+                if($usuario->login($datos['correo'], $datos['pass'])){
+                    $usuario -> credentials($datos['correo']);
                     print_r($_SESSION['roles']);
                     switch($_SESSION['roles'][0]){
                         case 'Administrador':
