@@ -10,12 +10,12 @@
 
         case 'login';
                 $datos = $_POST;
-                if($usuario->login($datos['correo'], $datos['pass'])){
-                    $usuario -> credentials($datos['correo']);
+                if($usuariopri->login($datos['correo'], $datos['pass'])){
+                    $usuariopri -> credentials($datos['correo']);
                     print_r($_SESSION['roles']);
                     switch($_SESSION['roles'][0]){
                         case 'Administrador':
-                            header('Location: ../InicioAdmin/CtrlInicioAdmin.php');
+                            header('Location: ../index.php');
                         break;
 
                         case 'Empleado':
@@ -24,13 +24,13 @@
                         
 
                         default: //cliente
-                        header('Location: ../Cliente/CtrlIndex.php');
+                        header('Location: ../index2.php');
                     }
                 }
                 else{
                     $sistema -> message(0,"Usuario o contraseña invalidas, porfavor ingresa campos validos");
                     $sistema -> logOut();
-                    require_once('index.php');
+                    require_once('viewLog.php');
                     }
         break;
 
@@ -40,6 +40,6 @@
                 header('Location: CtrlLogin.php');
                 break;
         default:
-        require_once('index.php');
+        require_once('viewLog.php');
     }
 ?>

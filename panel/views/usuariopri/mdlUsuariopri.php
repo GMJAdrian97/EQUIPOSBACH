@@ -106,9 +106,10 @@
 
         public function credentials($correo){
             $_SESSION['correo'] = $correo;
-            $sql = "SELECT r.rol
-                    from rol r inner join usuario_rol u on r.id_rol=u.id_rol 
-                    INNER JOIN usuario us on u.id_usuariopri= us.id_usuariopri 
+            $sql = "SELECT r.nombre_rol
+            from usuariopri_rol ur
+            INNER JOIN rol r on ur.id_rol= r.id_rol 
+            INNER JOIN usuariopri us on ur.id_usuariopri= us.id_usuariopri 
                     where us.correo= :correo" ;
             $stmt = $this->con->prepare($sql);
             $stmt -> bindParam(':correo', $correo, PDO::PARAM_STR);

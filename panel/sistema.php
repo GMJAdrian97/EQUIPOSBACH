@@ -48,7 +48,6 @@
         //Login
         public function login($correo,$pass){
             $this->connect();
-
             if($this->validarCorreo($correo)){
                 $pass = md5($pass);
                 $sql = "SELECT * FROM usuariopri 
