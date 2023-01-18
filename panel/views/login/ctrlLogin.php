@@ -18,7 +18,7 @@
                             header('Location: ../index.php');
                         break;
 
-                        case 'Empleado':
+                        case 'Mortal':
                            
                         break;
                         

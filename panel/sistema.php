@@ -43,11 +43,9 @@
             require_once("message.php");
         }
 
-
-
         //Login
         public function login($correo,$pass){
-            $this->connect();
+            $this->conexion();
             if($this->validarCorreo($correo)){
                 $pass = md5($pass);
                 $sql = "SELECT * FROM usuariopri 
@@ -63,6 +61,13 @@
                 }
                 return false; 
             }
+        }
+
+        
+        //elimir la sesion 
+        public function logOut(){
+            unset($_SESSION);
+            session_destroy();
         }
     }
 

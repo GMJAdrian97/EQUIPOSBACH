@@ -634,3 +634,42 @@ overflow: auto;*/
   grid-column: 1 / -1;
 }
 /*----------------------------- Dashboard ---------------------------*/
+.main-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.main-links li {
+  padding: .5rem 1rem;
+  background-color: rgb(10, 207, 197);
+}
+
+.dropdown-li{
+  position: relative;
+}
+
+.dropdown-li:hover .dropdown {
+  display: block;
+  opacity: 1;
+}
+
+.dropdown {
+  background-color: slateblue;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 100%;
+
+  opacity: 0; 
+  display: none;
+}
+
+.dropdown li {
+  list-style: none;
+
+  background-color: red;
+
+}

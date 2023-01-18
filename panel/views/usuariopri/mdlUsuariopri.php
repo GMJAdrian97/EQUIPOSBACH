@@ -118,7 +118,7 @@
             $_SESSION['roles']=array();
             $datosUsuariopri=$stmt -> fetchAll(PDO::FETCH_ASSOC);
             foreach($datosUsuariopri as $key => $value){
-                array_push($_SESSION['roles'],$value['rol']);
+                array_push($_SESSION['roles'],$value['nombre_rol']);
             }
             //$_SESSION['validado'] = true;
         }
