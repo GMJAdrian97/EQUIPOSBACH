@@ -1,5 +1,6 @@
 <?php
     require_once('../../sistema.php');
+    require_once('../usuarios/mdlUsuario.php');
     require_once('../usuariopri/mdlUsuariopri.php');
     $accion = NULL;
     if(isset($_GET['accion'])){
@@ -9,7 +10,7 @@
     switch($accion){
 
         case 'login';
-                $datos = $_POST;
+        $datos = $_POST;
                 if($usuariopri->login($datos['correo'], $datos['pass'])){
                     $usuariopri -> credentials($datos['correo']);
                     print_r($_SESSION['roles']);
@@ -23,12 +24,13 @@
                         break;
                         
 
-                        default: //cliente
+                        default: //mortal
                         header('Location: ../index2.php');
                     }
                 }
                 else{
                     $sistema -> message(0,"Usuario o contraseña invalidas, porfavor ingresa campos validos");
+                    session_start();
                     $sistema -> logOut();
                     require_once('viewLog.php');
                     }

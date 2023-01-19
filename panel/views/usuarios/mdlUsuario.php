@@ -132,6 +132,31 @@
             return $datosUsuario;
         }
 
+
+        public function readOneCorreo($correo){
+            $this->conexion();
+            $sql = "SELECT u.no_empleado,
+                           u.nombre,
+                           u.correo,
+                           u.usuario_red,
+                           u.no_celular,
+                           p.nombre AS puesto,
+                           un.nombre AS un,
+                           d.nombreD AS departamento
+                    FROM usuario u
+                    INNER JOIN puesto p on p.id_puesto = u.id_puesto
+                    INNER JOIN un un on un.id_un = u.id_un
+                    INNER JOIN departamento d on d.id_departamento = u.id_departamento
+                    WHERE u.correo = :correo;";
+            $stmt = $this->con->prepare($sql);
+            $stmt -> bindParam(':correo', $correo, PDO::PARAM_INT);
+            $stmt->execute();
+            $datosUsuario = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $datosUsuario = (isset($datosUsuario[0]))?$datosUsuario[0]:null;
+            return $datosUsuario;
+        }
+
+
         //////////////////////////////////////// Metodo Create ////////////////////////////////////////
         public function create($datosUsuario){
             $this->conexion();
