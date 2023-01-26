@@ -30,6 +30,6 @@ use Dompdf\Dompdf;
 $dompdf= new Dompdf();
 $dompdf->load_html($pdfHTML);
 $dompdf->render();
-$dompdf->stream("documento.pdf", array('Attachment'=>'0'));
+$dompdf->stream("Carta Resguardo.pdf", array('Attachment'=>'0'));
 
 ?>
