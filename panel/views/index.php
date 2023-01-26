@@ -1,5 +1,7 @@
 <?php
 require_once('../../componentes/header.php');
+require_once('../sistema.php');
+require_once('/EQUIPOSBACH/panel/views/ticketPC/mdlTicketPC.php');
 ?>
 <section class="page-content">
     <section class="search-and-user">
@@ -39,7 +41,14 @@ require_once('../../componentes/header.php');
         </div>
     </section>
     <section class="grid">
-        <article></article>
+        <article>
+            <?php 
+                $datosEquipos = $ticket_pc->read();
+                print_r($datosEquipos);
+                die();
+            ?>
+        <div id="chart_div" style="width: 1150px; height: auto;"></div>
+        </article>
         <article></article>
         <article></article>
         <article></article>

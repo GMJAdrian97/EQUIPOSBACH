@@ -1,4 +1,5 @@
 <?php
+require_once('../../../vendor/autoload.php');
     require_once('mdlTicketPC.php');
     require_once('../usuarios/mdlUsuario.php');
     require_once('../equipo/mdlEquipo.php');

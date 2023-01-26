@@ -19,7 +19,9 @@
     <!--Datatable plugin CSS file -->
     <link rel="stylesheet" href="/EQUIPOSBACH/css/datatable.css">
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" /> -->
-
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="/EQUIPOSBACH/JS/graficos.js"></script>
+    <script type="text/javascript" src="/EQUIPOSBACH/JS/graficos2.js"></script>
     <title>Bachoco</title>
 
 </head>
