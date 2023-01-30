@@ -62,7 +62,7 @@
     </table>
     <br />
     <a href="./excelTicketPC.php" class="btn btn-primary" id="table_button" style="margin:30px; float: right;">
-        Añadir nuevo Equipos</a>
+        Descarga Excel</a>
     <a href="ctrlTicketPC.php?accion=new" class="btn btn-primary" id="table_button" style="margin:30px; float: right;">
         Añadir nuevo Equipos</a>
 </section>

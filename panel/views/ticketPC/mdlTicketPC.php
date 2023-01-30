@@ -187,13 +187,25 @@
                 $stmt -> bindParam(':id_renovacion', $datosTicketPC['id_renovacion'], PDO::PARAM_INT);
                 $rs = $stmt->execute();
                 if ($stmt->rowCount()>0) {
-                    $sql =  "UPDATE equipo SET 
+                    if($datosTicketPC['id_renovacion'] == 1){
+                        $sql =  "UPDATE equipo SET 
                                     estado = 'Ocupado' 
                             WHERE   st = :st";
-                    $stmt = $this->con->prepare($sql);
-                    $stmt -> bindParam(':st', $datosTicketPC['st'], PDO::PARAM_STR);
-                    $rs = $stmt->execute();
-                    $this->con->commit();
+                        $stmt = $this->con->prepare($sql);
+                        $stmt -> bindParam(':st', $datosTicketPC['st'], PDO::PARAM_STR);
+                        $rs = $stmt->execute();
+                        $this->con->commit();
+                    }else{
+                        if($datosTicketPC['id_renovacion'] == 4){
+                            $sql =  "UPDATE equipo SET 
+                                        estado = 'Prestamo' 
+                                WHERE   st = :st";
+                            $stmt = $this->con->prepare($sql);
+                            $stmt -> bindParam(':st', $datosTicketPC['st'], PDO::PARAM_STR);
+                            $rs = $stmt->execute();
+                            $this->con->commit();
+                        }
+                    }
                 }
                 
                 return true;

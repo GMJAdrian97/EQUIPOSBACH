@@ -56,6 +56,8 @@
             </tbody>
         </table>
         <br />
+        <a href="./excelEquipo.php" class="btn btn-primary" id="table_button" style="margin-left:10px; float: right;">
+        Descarga Excel</a>
         <a href="ctrlEquipo.php?accion=new" id="table_button" class="btn btn-primary" style="float: right;"> Añadir nuevo
             Equipos</a>
 </section>

@@ -54,6 +54,8 @@
                 </tbody>
             </table>
             <br />
+            <a href="./excelUsuarios.php" class="btn btn-primary" id="table_button" style="margin-left:10px; float: right;">
+        Descarga Excel</a>
             <a href="ctrlUsuario.php?accion=new" id="table_button" class="btn btn-primary" style="float: right;"> Añadir
                 nuevo Usuario</a>
 

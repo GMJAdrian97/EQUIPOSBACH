@@ -1,12 +1,3 @@
-<?php
-require_once('../sistema.php');
-require_once('./mdlGraficas.php');
-/* require_once('../../componentes/headerG.php');  */
-$datosTicketPCs = $grafica->readPCs();
-$datosEquiposO = $grafica->readEquiposOcupados();
-$datosEquiposD = $grafica->readEquiposDispo();
-$datosEquiposP = $grafica->readEquiposPres();
-?>
 <!doctype html>
 <html lang="en">
 
@@ -30,45 +21,39 @@ $datosEquiposP = $grafica->readEquiposPres();
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" /> -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-    google.charts.load('current', {
-        'packages': ['corechart']
-    });
-    google.charts.setOnLoadCallback(drawVisualization);
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
 
-    function drawVisualization() {
+      function drawVisualization() {
         // Some raw data (not necessarily accurate)
         var data = google.visualization.arrayToDataTable([
-            ['Mes', 'Disponible', 'Prestamo', 'Asignado'],
-            <?php
-          echo "['Enero', ".$datosEquiposD[0]['disponible'].", ".$datosEquiposP[0]['prestamo'].", ".$datosEquiposO[0]['ocupado']."]";
-          ?>
+          ['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
+          ['2004/05',  165,      938,         522,             998,           450,      614.6],
+          ['2005/06',  135,      1120,        599,             1268,          288,      682],
+          ['2006/07',  157,      1167,        587,             807,           397,      623],
+          ['2007/08',  139,      1110,        615,             968,           215,      609.4],
+          ['2008/09',  136,      691,         629,             1026,          366,      569.6]
         ]);
 
         var options = {
-            title: 'Resumen de equipos',
-            vAxis: {
-                title: 'Equipos'
-            },
-            hAxis: {
-                title: 'Mes'
-            },
-            seriesType: 'bars',
-            series: {
-                5: {
-                    type: 'line'
-                }
-            }
+          title : 'Monthly Coffee Production by Country',
+          vAxis: {title: 'Cups'},
+          hAxis: {title: 'Month'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}}
         };
 
         var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
         chart.draw(data, options);
-    }
+      }
     </script>
     <title>Bachoco</title>
 
 </head>
 
 <body>
+
+
     <header class="page-header">
         <nav>
             <a href="#hola" aria-label="forecastr logo" class="logo">
@@ -276,196 +261,3 @@ $datosEquiposP = $grafica->readEquiposPres();
             </ul>
         </nav>
     </header>
-
-    <section class="page-content">
-        <section class="search-and-user">
-            <form>
-                <input type="search" placeholder="Search Pages...">
-                <button type="submit" aria-label="submit form">
-                    <svg aria-hidden="true">
-                        <use xlink:href="#search"></use>
-                    </svg>
-                </button>
-            </form>
-            <div class="admin-profile">
-                <span class="greeting">Hello admin</span>
-                <div class="notifications">
-                    <span class="badge">1</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-person-circle" viewBox="0 0 16 16">
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                        <path fill-rule="evenodd"
-                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                    </svg>
-                </div>
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                            aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                </nav>
-            </div>
-        </section>
-        <section class="grid">
-            <article>
-                <div id="chart_div" style="width: 100%"></div>
-            </article>
-            <article>
-                <div style="width: 100%">
-                    <h1> ¡Equipos Asignados! </h1>
-                    <table class="table table-hover" style="width: 100%">
-                        <thead>
-                            <tr>
-                                <th scope="col" style="text-align:center;">ST</th>
-                                <th scope="col" style="text-align:center;">Empleado</th>
-                                <th scope="col" style="text-align:center;">Descripcion</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            <?php
-                foreach ($datosTicketPCs as $key => $datosTicketPC): 
-            ?>
-
-                            <tr>
-                                <td><?php echo $datosTicketPC['st'] ?></td>
-                                <td><?php echo $datosTicketPC['empleado'] ?></td>
-                                <td><?php echo $datosTicketPC['descripcion'] ?></td>
-                            </tr>
-
-                            <?php
-                endforeach;
-            ?>
-
-                        </tbody>
-                    </table>
-                    <div>
-            </article>
-            <article></article>
-        
-            <article></article>
-        </section>
-    </section>
-    <!-- Footer -->
-
-    <!-- Footer -->
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.6.1.js"
-        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
-    </script>
-
-    <!-- Script para genarar contraseñas aleatorias -->
-    <script type="text/javascript">
-    function GenerarPassAdmin() {
-        $.ajax({
-            url: 'GenerarPass.php',
-            type: 'post',
-
-            success: function(response) {
-                $("#PassAdmin").val(response);
-            }
-        });
-    }
-
-    function GenerarPassSystem() {
-        $.ajax({
-            url: 'GenerarPass.php',
-            type: 'post',
-
-            success: function(response) {
-                $("#PassSystem").val(response);
-            }
-        });
-    }
-
-    function GenerarPassDisco() {
-        $.ajax({
-            url: 'GenerarPass.php',
-            type: 'post',
-
-            success: function(response) {
-                $("#PassDisco").val(response);
-            }
-        });
-    }
-
-    function GenerarPassWin() {
-        $.ajax({
-            url: 'GenerarPass.php',
-            type: 'post',
-
-            success: function(response) {
-                $("#PassWin").val(response);
-            }
-        });
-    }
-    </script>
-    <!-- Script para genarar contraseñas aleatorias -->
-
-
-    <!-- Script para las tablas con paginacion -->
-    <!--jQuery library file -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js">
-    </script>
-
-    <!--Datatable plugin JS library file -->
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
-    </script>
-    <script>
-    /* Initialization of datatables */
-    $(document).ready(function() {
-        $('table.display').DataTable({
-            language: {
-                processing: "Tratamiento en curso...",
-                search: "Buscar&nbsp;:",
-                lengthMenu: "Agrupar de  _MENU_ items",
-                info: "Mostrando del item _START_ al _END_ de un total de _TOTAL_ items",
-                infoEmpty: "No existen datos",
-                infoFiltered: "(Filtrado de _MAX_ elementos en total)",
-                infoPostFix: "",
-                loadingRecords: "Cargando...",
-                zeroRecords: "No se econtraron resultados en tu busqueda",
-                emptyTable: "No hay datos disponibles en la tabla",
-                paginate: {
-                    first: "Primero",
-                    previous: "Anteriror",
-                    next: "Next",
-                    last: "Ultimo"
-                },
-                aria: {
-                    sortAscending: ": Active para ordenar la columna en orden ascendente",
-                    sortDescending: ": Active para ordenar la columna en orden descendente"
-                }
-            }
-        });
-    });
-    </script>
-    <script src="/EQUIPOSBACH/JS/das.js"></script>
-    <!-- Script para las tablas con paginacion -->
-
-
-
-    <!--
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-    -->
-
-
-</body>
-
-</html>

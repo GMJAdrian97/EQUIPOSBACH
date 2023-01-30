@@ -41,6 +41,8 @@
             </tbody>
         </table>
         <br />
+        <a href="./excelMarca.php" class="btn btn-primary" id="table_button" style="margin-left:10px; float: right;">
+        Descarga Excel</a>
         <a href="ctrlMarca.php?accion=new" id="table_button" class="btn btn-primary" style="float: right;"> Añadir nuevo
             marca</a>
             </section>

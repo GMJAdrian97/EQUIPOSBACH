@@ -45,5 +45,7 @@
         </table>
 
         <br />
+        <a href="./excelVenta.php" class="btn btn-primary" id="table_button" style="margin-left:10px; float: right;">
+        Descarga Excel</a>
         <a id="table_button" href="ctrlTicketCompra.php?accion=new" class="btn btn-primary" style="float: right;"> Añadir nuevo Equipos</a>
             </section>

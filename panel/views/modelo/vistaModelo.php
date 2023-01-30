@@ -39,6 +39,8 @@
             </tbody>
         </table>
         <br />
+        <a href="./excelModelo.php" class="btn btn-primary" id="table_button" style="margin-left:10px; float: right;">
+        Descarga Excel</a>
         <a href="ctrlModelo.php?accion=new" id="table_button" class="btn btn-primary" style="float: right;"> Añadir nuevo modelo</a>
 
 </section>
