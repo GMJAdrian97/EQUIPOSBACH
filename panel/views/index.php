@@ -6,6 +6,10 @@ $datosTicketPCs = $grafica->readPCs();
 $datosEquiposO = $grafica->readEquiposOcupados();
 $datosEquiposD = $grafica->readEquiposDispo();
 $datosEquiposP = $grafica->readEquiposPres();
+$datosEquiposLaptop = $grafica->readEquiposLaptop();
+$datosEquiposDesktop = $grafica->readEquiposDesktop();
+$datosEquiposTablet = $grafica->readEquiposTablet();
+$datosTicketCompras = $grafica->readTC();
 ?>
 <!doctype html>
 <html lang="en">
@@ -29,6 +33,31 @@ $datosEquiposP = $grafica->readEquiposPres();
     <link rel="stylesheet" href="/EQUIPOSBACH/css/datatable.css">
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" /> -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+    google.charts.load("current", {
+        packages: ["corechart"]
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            <?php echo"['Task', 'Hours per Day'],
+            ['Laptop', ".$datosEquiposLaptop[0]['laptop']."],
+            ['Desktop', ".$datosEquiposDesktop[0]['desktop']."],
+            ['Tablet', ".$datosEquiposTablet[0]['tablet']."]"?>
+        ]);
+
+        var options = {
+            title: 'Tipos de equipos',
+            pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+    }
+    </script>
+
     <script type="text/javascript">
     google.charts.load('current', {
         'packages': ['corechart']
@@ -64,6 +93,7 @@ $datosEquiposP = $grafica->readEquiposPres();
         chart.draw(data, options);
     }
     </script>
+
     <title>Bachoco</title>
 
 </head>
@@ -349,9 +379,46 @@ $datosEquiposP = $grafica->readEquiposPres();
                     </table>
                     <div>
             </article>
-            <article></article>
-        
-            <article></article>
+            <article>
+                <div id="donutchart" style="width: 100%"></div>
+            </article>
+
+            <article>
+                <div style="width: 100%">
+                    <h1 style="width: 100%"> Ventas equipos </h1>
+                    <table class="table table-hover" style="width: 100%"">
+            <thead>
+                <tr>
+                    <th scope=" col" style="text-align:center;">ID</th>
+                        <th scope="col" style="text-align:center;">Fecha</th>
+                        <th scope="col" style="text-align:center;">Descripcion</th>
+                        <th scope="col" style="text-align:center;">Empleado</th>
+                        <th scope="col" style="text-align:center;">ST</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                            <?php
+                foreach ($datosTicketCompras as $key => $datosTicketCompra):
+            ?>
+
+                            <tr>
+                                <td><?php echo $datosTicketCompra['id_compra'] ?></td>
+                                <td><?php echo $datosTicketCompra['fecha'] ?></td>
+                                <td><?php echo $datosTicketCompra['descripcion'] ?></td>
+                                <td><?php echo $datosTicketCompra['empleado'] ?></td>
+                                <td><?php echo $datosTicketCompra['st'] ?></td>
+
+                            </tr>
+
+                            <?php
+                endforeach;
+            ?>
+
+                        </tbody>
+                    </table>
+            </div>
+            </article>
         </section>
     </section>
     <!-- Footer -->

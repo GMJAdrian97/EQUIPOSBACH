@@ -54,6 +54,51 @@
             $datosEquipos = $stmt->fetchAll(PDO::FETCH_ASSOC); 
             return $datosEquipos; 
         }
+
+        public function readEquiposLaptop(){
+            $this->conexion();
+            $sql = "SELECT COUNT(*) AS laptop FROM equipo WHERE tipo_equipo = 'Laptop';";
+            $stmt = $this->con->prepare($sql);
+            $stmt->execute();
+            $datosEquiposLaptop = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+            return $datosEquiposLaptop; 
+        }
+
+        public function readEquiposDesktop(){
+            $this->conexion();
+            $sql = "SELECT COUNT(*) AS desktop FROM equipo WHERE tipo_equipo = 'Desktop';";
+            $stmt = $this->con->prepare($sql);
+            $stmt->execute();
+            $datosEquiposLaptop = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+            return $datosEquiposLaptop; 
+        }
+
+        public function readEquiposTablet(){
+            $this->conexion();
+            $sql = "SELECT COUNT(*) AS tablet FROM equipo WHERE tipo_equipo = 'Tablet';";
+            $stmt = $this->con->prepare($sql);
+            $stmt->execute();
+            $datosEquiposLaptop = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+            return $datosEquiposLaptop; 
+        }
+
+
+        public function readTC(){
+            $this->conexion();
+            $sql = "SELECT tc.id_compra,
+                            tc.fecha,
+                            tc.descripcion,
+                            u.nombre AS 'empleado',
+                            e.st
+                    FROM ticket_compra tc
+                    INNER JOIN usuario u on u.no_empleado = tc.no_empleado
+                    INNER JOIN equipo e on e.st = tc.st;";
+            $stmt = $this->con->prepare($sql);
+            $stmt->execute();
+            $datosTicketCompras = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+            return $datosTicketCompras; 
+        }
+
     }
 
     //////////////////////////////////////// Metodos CRUD ////////////////////////////////////////

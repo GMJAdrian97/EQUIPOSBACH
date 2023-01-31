@@ -78,7 +78,7 @@
     text-align: center;
     padding: 15px 40px;
     margin-top: 5px;
-    background-color: #b08bf8;
+    background-color: #f87d30;
     color: #fff;
     font-size: 14px;
     margin-left: auto;
@@ -90,7 +90,7 @@
   }
   #button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 2px 6px -1px rgba(182, 157, 230, 0.65);
+    box-shadow: 0 2px 6px -1px #f87d30;
   }
   #button:hover:active {
     transform: scale(0.99);
@@ -251,11 +251,11 @@
   }
   
   .left {
-    width: 220px;
+    width: 250px;
     height: auto;
     min-height: 100%;
     position: relative;
-    background-image: url("https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-image: url(../img/Login.jpg);
     background-size: cover;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
